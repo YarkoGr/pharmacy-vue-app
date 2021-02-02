@@ -1,0 +1,20 @@
+@import "./core/common.scss";
+@import "./core/mixins.scss";
+@import "./core/vars.scss";
+@font-face {
+    // src: url("../assets/Fonts/AvenirNextCyr-Regular.ttf");
+    font-family: "Avenir Next Cyr Light";
+    src: url("../assets/Fonts/AvenirNextCyr-Light.ttf");
+}
+
+@font-face {
+    // src: url("../assets/Fonts/AvenirNextCyr-Regular.ttf");
+    font-family: "Avenir Next Cyr Regular";
+    src: url("../assets/Fonts/AvenirNextCyr-Regular.ttf");
+}
+
+@font-face {
+    // src: url("../assets/Fonts/AvenirNextCyr-Regular.ttf");
+    font-family: "Avenir Next Cyr Bold";
+    src: url("../assets/Fonts/AvenirNextCyr-Bold.ttf");
+}
