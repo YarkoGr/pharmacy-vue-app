@@ -66,6 +66,10 @@ export default {
 <style lang="scss">
 .show-couters {
   @include flex(space-around, center, row, wrap);
+  @media screen and (max-width: 2145px) {
+    @include flex(center, center, column);
+    margin: 0 auto;
+  }
   &__item {
     @include flex(start, center);
     padding-left: 15px;
