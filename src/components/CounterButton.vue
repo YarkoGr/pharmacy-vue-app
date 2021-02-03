@@ -59,6 +59,7 @@ export default {
     border-radius: 45px;
     @include text($h28);
     font-family: $bold;
+    outline: none;
     &.-grad1 {
       background: $btn1_gradient;
     }

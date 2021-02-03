@@ -6,16 +6,21 @@
     </router-link>
     <ul class="final-page__list">
       <li class="final-page__list-item">
-        <span class="final-page__list-item-value">{{ firstPrep }}%</span
-        ><span class="final-page__list-item-number">Препарат 1</span>
+        <span class="final-page__list-item-value" v-if="!firstPrep">0%</span>
+        <span class="final-page__list-item-value" v-else>{{ firstPrep }}%</span>
+        <span class="final-page__list-item-number">Препарат 1</span>
       </li>
       <li class="final-page__list-item">
-        <span class="final-page__list-item-value">{{ secondPrep }}%</span
-        ><span class="final-page__list-item-number">Препарат 2</span>
+        <span class="final-page__list-item-value" v-if="!secondPrep">0%</span>
+        <span class="final-page__list-item-value" v-else
+          >{{ secondPrep }}%</span
+        >
+        <span class="final-page__list-item-number">Препарат 2</span>
       </li>
       <li class="final-page__list-item">
-        <span class="final-page__list-item-value">{{ thirdPrep }}%</span
-        ><span class="final-page__list-item-number">Препарат 3</span>
+        <span class="final-page__list-item-value" v-if="!thirdPrep">0%</span>
+        <span class="final-page__list-item-value" v-else>{{ thirdPrep }}%</span>
+        <span class="final-page__list-item-number">Препарат 3</span>
       </li>
     </ul>
     <div class="final-page__title">
@@ -26,6 +31,9 @@
       <span>Это тестовое задание, так что не будем</span>
       <span>углубляться в глубины проблем фармацевтов.</span>
     </div>
+    <router-link class="final-page__btn" :to="routes.main"
+      >Попробовать еще</router-link
+    >
   </div>
 </template>
 <script>
@@ -41,11 +49,12 @@ export default {
         name: "Final-img",
       },
       icons: {
-        src: require("@/assets/svg/Union.svg"),
+        src: require("@/assets/svg/Union-w.svg"),
         name: "home",
       },
       routes: {
         home: "/",
+        main: "/main",
       },
     };
   },
@@ -70,6 +79,7 @@ export default {
 .final-page {
   position: relative;
   padding-left: 130px;
+  height: 100vh;
   @include flex(start, start, column);
 
   &__img {
@@ -124,6 +134,20 @@ export default {
   &__subtitle {
     @include flex(start, start, column);
     @include text($h24, 400, $black);
+  }
+  &__btn {
+    @include flex(center, center);
+    @include text($h24);
+    height: 60px;
+    padding: 0 15px;
+    position: absolute;
+    left: 9.03%;
+    right: 72.22%;
+    top: 85.94%;
+    bottom: 8.2%;
+    text-decoration: none;
+    background: $gradient_gray;
+    border-radius: 30px;
   }
 }
 </style>
