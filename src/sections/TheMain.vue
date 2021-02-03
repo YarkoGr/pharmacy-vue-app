@@ -5,7 +5,7 @@
   </div>
 </template>
 <script>
-import MainContent from "../components/MainContent.vue";
+import MainContent from "./MainContent.vue";
 import SideBar from "../components/SideBar.vue";
 export default {
   components: { SideBar, MainContent },

@@ -8,6 +8,8 @@ const TheMain = () =>
     import ( /* webpackChunkName: "about" */ "../sections/TheMain.vue");
 const Home = () =>
     import ( /* webpackChunkName: "about" */ "../sections/Home.vue");
+const FinalPage = () =>
+    import ( /* webpackChunkName: "about" */ "../sections/FinalPage.vue");
 
 const routes = [{
         name: RoutesNames.main,
@@ -18,6 +20,11 @@ const routes = [{
         name: RoutesNames.home,
         path: RoutesPath.home,
         component: Home,
+    },
+    {
+        name: RoutesNames.finalPage,
+        path: RoutesPath.finalPage,
+        component: FinalPage,
     },
 ];
 

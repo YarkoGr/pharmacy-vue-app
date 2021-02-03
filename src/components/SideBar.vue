@@ -6,19 +6,25 @@
           class="side-bar__top-nav-item-link"
           active-class="_active"
           exact
-          :to="routes.path"
+          :to="routes.home"
         >
-          <img src="../assets/svg/Union.svg" alt="topIconHome"
-        /></router-link>
+          <img src="../assets/svg/Union.svg" alt="topIconHome" />
+        </router-link>
       </li>
       <li class="side-bar__top-nav-item">
-        <button class="side-bar__top-nav-item-link">
+        <router-link class="side-bar__top-nav-item-link" :to="routes.final">
           <img src="../assets/svg/reset.svg" alt="topIconReset" />
-        </button>
+        </router-link>
       </li>
     </ul>
     <span class="side-bar__btn-title">Параметри:</span>
     <show-couters />
+    <div class="side-bar__bottom-counter">
+      <span class="side-bar__bottom-counter-text">Осталось в очереди:</span>
+      <span class="side-bar__bottom-counter-text"
+        ><span class="side-bar__bottom-counter-text -bold">14</span>/15</span
+      >
+    </div>
   </div>
 </template>
 <script>
@@ -29,7 +35,8 @@ export default {
   data() {
     return {
       routes: {
-        path: "/",
+        home: "/",
+        final: "/finalPage",
       },
     };
   },
@@ -37,7 +44,9 @@ export default {
 </script>
 <style lang="scss">
 .side-bar {
-  width: 32.5%;
+  position: relative;
+  @include flex(start, start, column);
+  min-width: 32.5%;
   min-height: 100vh;
   background: $main-gradient;
   &__top-nav {
@@ -62,6 +71,25 @@ export default {
     transition: background-color 0.5s ease;
     &:hover {
       background-color: $notsodark;
+    }
+  }
+  &__btn-title {
+    @include text($h36);
+    padding-left: 40px;
+    margin-bottom: 30px;
+    display: block;
+  }
+  &__bottom-counter {
+    @include flex(center, center, column);
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 25px 0;
+  }
+  &__bottom-counter-text {
+    @include text($h36);
+    &.-bold {
+      font-family: $bold;
     }
   }
 }
