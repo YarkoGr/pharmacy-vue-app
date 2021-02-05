@@ -1,6 +1,8 @@
 <template>
   <div class="the-card">
-    <img :src="cards.src" :alt="cards.title" class="the-card__img" />
+    <div class="the-card__imd-wrapper">
+      <img :src="cards.src" :alt="cards.title" class="the-card__img" />
+    </div>
     <div class="the-card__titile-wrapper">
       <h3 class="the-card__title">{{ cards.title }}</h3>
       <span class="the-card__subtitle">{{ cards.subtitle }}</span>
@@ -40,6 +42,9 @@ export default {
     font-size: $h16;
     line-height: 19.6px;
     letter-spacing: 2.1px;
+  }
+  &__imd-wrapper {
+    @include padding-hack(64.7%, cover);
   }
 }
 </style>
